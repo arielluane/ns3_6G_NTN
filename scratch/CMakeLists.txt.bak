@@ -97,4 +97,13 @@ foreach(subdir ${scratch_subdirectories})
     create_scratch("${scratch_sources}")
   endif()
 endforeach()
-
+  ns3::core ns3::network ns3::internet ns3::applications
+  ns3::mobility ns3::csma ns3::spectrum
+  ns3::mmwave ns3::satellite ns3::thz
+)
+add_executable(6G_thz scratch/6G_thz.cc)
+target_link_libraries(6G_thz
+  ns3::core ns3::network ns3::internet ns3::applications
+  ns3::mobility ns3::csma ns3::spectrum
+  ns3::mmwave ns3::satellite ns3::thz
+)
